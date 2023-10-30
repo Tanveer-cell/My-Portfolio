@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
             property="og:image"
             content="/image.png"
           />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/fav.ico" />
       </Head>
       <main className={`${montserrat.variable} font-mont bg-light w-full min-h-screen`}>
         <NavBar />
