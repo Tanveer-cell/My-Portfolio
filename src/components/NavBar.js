@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Logo from "@/components/Logo";
-import Icons, { TwitterIcon, DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon } from "@/components/Icons";
+import Icons, { TwitterIcon, InstagramIcon, GithubIcon, LinkedInIcon, PinterestIcon } from "@/components/Icons";
 import React from 'react'
 import { useRouter } from 'next/router';
 import {motion} from 'framer-motion'
@@ -60,12 +60,12 @@ const NavBar = () => {
             >
               <PinterestIcon />
             </motion.a>
-            <motion.a href="https://twitter.com" target={"_blank"} 
+            <motion.a href="https://www.instagram.com/ig_veer6/" target={"_blank"} 
             whileHover={{y:-2}}
             whileTap={{scale:0.9}}
             className='w-6 ml-3'
             >
-              <DribbbleIcon/>
+              <InstagramIcon/>
             </motion.a>
         </nav>
 
