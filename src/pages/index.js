@@ -18,7 +18,7 @@ export default function Home() {
         <Layout className="pt-0">
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
-              <Image src={profilePic} alt="CodeBucks" className='w-5/6 h-auto' />
+              <Image src={profilePic} alt="Humanoid" className='w-9/12 h-auto pl-11' />
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
               <AnimatedText text="Turning Vision Into Reality With Science And Technology." className="!text-6xl !text-left" />
