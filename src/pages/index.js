@@ -25,7 +25,7 @@ export default function Home() {
             <div className="w-1/2 flex flex-col items-center self-center">
               <AnimatedText text="Combinig Life and Technology to Turn Vision Into Reality." className="!text-6xl !text-left" />
               <p className="my-4 text-base font-medium">
-              &quot; We didn't stay in the caves. We haven't stayed on the planet. With biotechnology, gene sequencing, we are not going to even stay within the limitations of biology. &quot;
+              &quot; We didn&apos;t stay in the caves. We haven&apos;t stayed on the planet. With biotechnology, gene sequencing, we are not going to even stay within the limitations of biology. &quot;
               </p>
               <div className="flex items-center self-start mt-2">
                 <Link href="/dummy.pdf" target={"_blank"}
