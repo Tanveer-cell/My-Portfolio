@@ -17,10 +17,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta property="og:title" content="Social Title for Cool Page" />
+          <meta property="og:title" content="Tanveer's Website" />
           <meta
             property="og:description"
-            content="And a social description for our cool page"
+            content="Welcome to my world of Technology and Science"
           />
           <meta
             property="og:image"
