@@ -10,6 +10,7 @@ import {motion, useMotionValue} from "framer-motion"
 import article3 from "../../public/images/articles/create modal component in react using react portals.png"
 import article4 from "../../public/images/articles/form validation in reactjs using custom react hook.png"
 import article5 from "../../public/images/articles/smooth scrolling in reactjs.png"
+import TransitionEffect from '@/components/TransitionEffect'
 
 const FramerImage = motion(Image);
 
@@ -83,9 +84,10 @@ const articles = () => {
   return (
     <>
         <Head>
-            <title>Tanveer | Articles Page</title>
+            <title>Tanveer | Articles</title>
             <meta name='description' content="any description" />
         </Head>
+        <TransitionEffect/>
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
