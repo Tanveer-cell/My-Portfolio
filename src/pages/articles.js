@@ -105,7 +105,7 @@ const articles = () => {
                     summary="Learn how to build a custom pagination component in ReactJS from scratch. 
                     Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
                     time="9 min read"
-                    link="/"
+                    link="/differentialGeometry"
                     img={article2}                    
                   />
                 </ul>
