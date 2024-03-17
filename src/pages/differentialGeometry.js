@@ -4,7 +4,7 @@ import { ExpandableSection, Subsection } from '@/components/ExpandableSection';
 import ScrollToTopArrow from '@/components/ScrolToTopArrow';
 import Image from 'next/image';
 
-const differentialGeometry = () => {
+const DifferentialGeometry = () => {
     const sections = [
         {
             title: 'Doing calculus on \\( \\mathbb{R}^n \\)',
@@ -439,4 +439,4 @@ const differentialGeometry = () => {
 };
 
 
-export default differentialGeometry;
+export default DifferentialGeometry;
