@@ -4,7 +4,7 @@ import { ExpandableSection, Subsection } from '@/components/ExpandableSection';
 import ScrollToTopArrow from '@/components/ScrolToTopArrow';
 import Image from 'next/image';
 
-const Electromag = () => {
+const differentialGeometry = () => {
     const sections = [
         {
             title: 'Doing calculus on \\( \\mathbb{R}^n \\)',
@@ -402,7 +402,7 @@ const Electromag = () => {
     return (
         <div className="relative h-full">
             <div className="h-full translate-y-16 overflow-y-auto scroll-smooth overflow-visible overscroll-y-auto pb-24 pt-4">
-                <div className="max-w-7xl mx-auto mb-20 p-4 shadow-2xl rounded-lg prose dark:prose-invert">
+                <div className="max-w-7xl mx-auto mb-20 p-4 shadow-2xl rounded-lg prose prose-invert">
                     <h1 className="text-3xl font-semibold text-center font-mono justify-center text-accent mb-4">
                         {processContent('Differential Geometry')}
                     </h1>
@@ -439,4 +439,4 @@ const Electromag = () => {
 };
 
 
-export default Electromag;
+export default differentialGeometry;
