@@ -3,6 +3,7 @@ import MathJaxWrapper from '@/components/MathJaxWrapper';
 import { ExpandableSection, Subsection } from '@/components/ExpandableSection';
 import ScrollToTopArrow from '@/components/ScrolToTopArrow';
 import Image from 'next/image';
+import TransitionEffect from '@/components/TransitionEffect'
 
 const DifferentialGeometry = () => {
     const sections = [
@@ -400,37 +401,40 @@ const DifferentialGeometry = () => {
     const processContent = (content) => <MathJaxWrapper content={content} />;
 
     return (
-        <div className="relative h-full">
-            <div className="h-full translate-y-16 overflow-y-auto scroll-smooth overflow-visible overscroll-y-auto pb-24 pt-4">
-                <div className="max-w-7xl mx-auto mb-20 p-4 shadow-2xl rounded-lg prose dark:prose-invert">
-                    <h1 className="text-3xl font-semibold text-center font-mono justify-center text-accent mb-4">
-                        {processContent('Differential Geometry')}
-                    </h1>
-                    {sections.map((section, index) => (
-                        <ExpandableSection
-                            key={index}
-                            title={processContent(`${index + 1}. ${section.title}`)}
-                            isOpen={openSection === index}
-                            toggle={() => toggleSection(index)}
-                            hasSubsections={section.subsections && section.subsections.length > 0}
-                        >
-                            {section.subsections && section.subsections.length > 0 && (
-                                <>
-                                    {section.subsections.map((subsection, subIndex) => (
-                                        <Subsection
-                                            key={subIndex}
-                                            title={processContent(`${index + 1}.${subIndex + 1} ${subsection.title}`)}
-                                            isOpen={openSubsection === subIndex && openSection === index}
-                                            toggle={() => toggleSubsection(subIndex)}
-                                        >
-                                            {processContent(subsection.content)}
-                                        </Subsection>
-                                    ))}
-                                </>
-                            )}
-                            {section.content && processContent(section.content)}
-                        </ExpandableSection>
-                    ))}
+        <div>
+            <TransitionEffect/>
+            <div className="relative h-full">
+                <div className="h-full translate-y-16 overflow-y-auto scroll-smooth overflow-visible overscroll-y-auto pb-24 pt-4">
+                    <div className="max-w-7xl mx-auto mb-20 p-4 shadow-2xl rounded-lg prose dark:prose-invert">
+                        <h1 className="text-3xl font-semibold text-center font-mono justify-center text-accent mb-4">
+                            {processContent('Differential Geometry')}
+                        </h1>
+                        {sections.map((section, index) => (
+                            <ExpandableSection
+                                key={index}
+                                title={processContent(`${index + 1}. ${section.title}`)}
+                                isOpen={openSection === index}
+                                toggle={() => toggleSection(index)}
+                                hasSubsections={section.subsections && section.subsections.length > 0}
+                            >
+                                {section.subsections && section.subsections.length > 0 && (
+                                    <>
+                                        {section.subsections.map((subsection, subIndex) => (
+                                            <Subsection
+                                                key={subIndex}
+                                                title={processContent(`${index + 1}.${subIndex + 1} ${subsection.title}`)}
+                                                isOpen={openSubsection === subIndex && openSection === index}
+                                                toggle={() => toggleSubsection(subIndex)}
+                                            >
+                                                {processContent(subsection.content)}
+                                            </Subsection>
+                                        ))}
+                                    </>
+                                )}
+                                {section.content && processContent(section.content)}
+                            </ExpandableSection>
+                        ))}
+                    </div>
                 </div>
             </div>
             <ScrollToTopArrow/>
