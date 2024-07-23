@@ -93,17 +93,15 @@ const articles = () => {
                 <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
                 <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
                   <FeaturedArticle
-                    title="Build A Custom Pagination Component In Reactjs From Scratch"
-                    summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-                    Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
+                    title="The Millennium Problems"
+                    summary="The seven problems which made mathematicians stumbble upon to think for hundreds of years."
                     time="9 min read"
                     link="/"
                     img={article1}                    
                   />
                   <FeaturedArticle
-                    title="Build A Custom Pagination Component In Reactjs From Scratch"
-                    summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-                    Follow this step-by-step guide to integrate Pagination component in your ReactJS project."
+                    title="World of IoT"
+                    summary="Deep dive into the world of IoT and know how the world communicates to make our life a lot easier."
                     time="9 min read"
                     link="/differentialGeometry"
                     img={article2}                    

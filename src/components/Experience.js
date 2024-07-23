@@ -48,35 +48,9 @@ const Experience = () => {
 
             <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                 <Details 
-                    position="Software Engineer" company="Google"
-                    companyLink="www.google.com" time="2022-Present" address="Mountain View, CA"
-                    work="Worked on a team responsible for developing new features for Google's 
-                    search engine, including improving the accuracy and relevance of search results and 
-                    developing new tools for data analysis and visualization."
-                />
-
-                <Details 
-                    position="Software Engineer" company="Google"
-                    companyLink="www.google.com" time="2022-Present" address="Mountain View, CA"
-                    work="Worked on a team responsible for developing new features for Google's 
-                    search engine, including improving the accuracy and relevance of search results and 
-                    developing new tools for data analysis and visualization."
-                />
-
-                <Details 
-                    position="Software Engineer" company="Google"
-                    companyLink="www.google.com" time="2022-Present" address="Mountain View, CA"
-                    work="Worked on a team responsible for developing new features for Google's 
-                    search engine, including improving the accuracy and relevance of search results and 
-                    developing new tools for data analysis and visualization."
-                />
-
-                <Details 
-                    position="Software Engineer" company="Google"
-                    companyLink="www.google.com" time="2022-Present" address="Mountain View, CA"
-                    work="Worked on a team responsible for developing new features for Google's 
-                    search engine, including improving the accuracy and relevance of search results and 
-                    developing new tools for data analysis and visualization."
+                    position="Summer Research Intern" company="Indian Institute of Science Education and Reseaarch Kolkata"
+                    companyLink="https://sites.google.com/site/ultrafastthzgroupiiserkolkata/home" time="July-Present" address="Department of Physical Sciences, IISER Kolkata, Mohanpur Campus, PO: BCKV Campus Main Office, Mohanpur - 741246, Nadia, West Bengal"
+                    work="Built an electronic device for wireless communication to rotate the polarizer for Ultafast Terahertz research || Built an app for controlling the environment of the rotator || Made an alarming system for detecting AC current || Analyzing the mechanism to make the moving rotator using gear mechanism (on going) || Studying concepts regrading THz spectroscopy and condensed matter physics"
                 />
             </ul>
         </div>

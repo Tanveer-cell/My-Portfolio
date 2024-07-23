@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Skills from '@/components/Skills'
 import Education from '@/components/Education'
+import Experience from '@/components/Experience'
 import TransitionEffect from '@/components/TransitionEffect'
 
 const AnimatedNumbers = ({value}) => {
@@ -48,7 +49,7 @@ const about = () => {
                     <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8'>
                         <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>About</h2>
                         <p className='font-medium'>
-                            Hi, I&apos;m Tanveer, a 3<sup>rd</sup> year Biotechnology student at Haldia Institute of Technology, Haldia, West Bengal, India. I have keen interest in Science and Technology and always enthusiastic about trying and learning new things to expand my knowledge and understant the world around me in a better way.
+                            Hi, I&apos;m Tanveer, a 4<sup>th</sup> year Biotechnology student at Haldia Institute of Technology, Haldia, West Bengal, India. I have keen interest in Science and Technology and always enthusiastic about trying and learning new things to expand my knowledge and understant the world around me in a better way.
                         </p>
 
                         <p className='my-4 font-medium'>
@@ -98,6 +99,7 @@ const about = () => {
                     </div>
                 </div>
                 <Skills/>
+                <Experience/>
                 <Education/>
             </Layout>
         </main>
