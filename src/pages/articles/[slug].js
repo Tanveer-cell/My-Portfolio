@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { remark } from "remark";
-import remarkHtml from "remark-html";
 import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
 import rehypeKatex from "rehype-katex";
