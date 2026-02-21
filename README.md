@@ -9,3 +9,5 @@
 
 - [framer-motion](https://www.framer.com/motion/) <br />
 - [Tailwind css](https://tailwindcss.com/) <br />
+- [Three.js](https://threejs.org/) <br />
+- [KaTeX](https://katex.org/) <br />

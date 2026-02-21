@@ -22,6 +22,23 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
+        float: 'float 6s ease-in-out infinite',
+        drift: 'drift 12s ease-in-out infinite',
+        helix: 'helix 8s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translateX(0px)' },
+          '50%': { transform: 'translateX(18px)' },
+        },
+        helix: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       backgroundImage:{
         circularLight:"repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px,#f5f5f5 100px)",

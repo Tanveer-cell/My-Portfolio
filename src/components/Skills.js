@@ -1,49 +1,74 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
 
-const Skill = ({name, x, y}) => {
-    return(    
-        <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark text-light py-3 px-6 shadow-dark cursor-pointer absolute dark:bg-light dark:text-dark lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent xs:text-dark
-        xs:dark:text-light xs:font-bold' 
-        whileHover={{scale:1.05}}
-        initial={{x:0,y:0}}
-        whileInView={{x:x, y:y, transition:{duration:1.5}}}
-        viewport={{once: true}}
-        >
-            {name}
-        </motion.div>
-    )
-}
+const skillGroups = [
+  {
+    title: "Programming Languages",
+    items:
+      "Python, C++, C, Java, JavaScript, NextJS, Perl, SQL, Arduino, ESP-32, Linux, LaTeX",
+  },
+  {
+    title: "Software Tools & Frameworks",
+    items: "Git, Matlab, AutoDesk Fusion",
+  },
+  {
+    title: "Bioinformatics Tools",
+    items: "Sequence alignment, database management, BLAST, FASTA",
+  },
+  {
+    title: "Spoken Languages",
+    items: "English, Hindi",
+  },
+];
 
-const Skills = () => {
-  return (
-    <>
-        <h2 className='font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32'>Skills</h2>
-        <div className='w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark lg:h-[80vh] 
-        sm:h-[60vh] xs:h-[50vh]
-        lg:bg-circularLightLg lg:dark:bg-circularDarkLg
-        md:bg-circularLightMd md:dark:bg-circularDarkMd
-        sm:bg-circularLightSm sm:dark:bg-circularDarkSm
-        '>
-            <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer
-            dark:bg-light dark:text-dark lg:p-6 md:p-4 xs:text-xs xs::p-2'
-            whileHover={{scale:1.05}}>
-                Web
-            </motion.div>
-
-            <Skill name="HTML" x="-25vw" y="2vw"/>
-            <Skill name="CSS" x="-5vw" y="-10vw"/>
-            <Skill name="Javascript" x="20vw" y="6vw"/>
-            <Skill name="ReactJS" x="0vw" y="12vw"/>
-            <Skill name="NextJS" x="-20vw" y="-15vw"/>
-            <Skill name="C++" x="15vw" y="-12vw"/>
-            <Skill name="Web Design" x="32vw" y="-5vw"/>
-            <Skill name="SQL" x="0vw" y="-20vw"/>
-            <Skill name="Java" x="-25vw" y="18vw"/>
-            <Skill name="Tailwind CSS" x="18vw" y="18vw"/>
+const Skills = ({ compact = false }) => {
+  if (compact) {
+    return (
+      <section className="w-full">
+        <h3 className="text-lg font-bold uppercase text-dark/75 dark:text-light/75">
+          Skills
+        </h3>
+        <div className="mt-4 flex flex-col gap-3 text-sm text-dark/80 dark:text-light/80">
+          {skillGroups.map((group) => (
+            <div key={group.title}>
+              <div className="font-semibold text-dark dark:text-light">
+                {group.title}:
+              </div>
+              <div className="mt-1">{group.items}</div>
+            </div>
+          ))}
         </div>
-    </>
-  )
-}
+      </section>
+    );
+  }
 
-export default Skills
+  return (
+    <section className="mt-64 md:mt-32">
+      <div className="w-full text-center">
+        <h2 className="font-bold text-8xl md:text-6xl">Skills</h2>
+        <p className="mt-3 text-sm text-dark/70 dark:text-light/70">
+          A focused toolkit across biotech, data, and modern web.
+        </p>
+      </div>
+      <div className="mt-10 w-full">
+        <div className="mx-auto flex max-w-4xl flex-col gap-4 text-left text-base text-dark/80 dark:text-light/80">
+          {skillGroups.map((group) => (
+            <motion.div
+              key={group.title}
+              className="flex flex-col"
+              whileHover={{ x: 2 }}
+              transition={{ duration: 0.15 }}
+            >
+              <span className="font-semibold text-dark dark:text-light">
+                {group.title}:
+              </span>
+              <span className="mt-1">{group.items}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;

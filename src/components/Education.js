@@ -5,9 +5,10 @@ import LiIcon from './LiIcon'
 const Details = ({type, time, place, info}) => {
     const ref = useRef(null);
     return (
-        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[66%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
+        <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[66%] mx-auto flex flex-col items-start justify-between md:w-[80%]'>
         <LiIcon reference={ref}/>
         <motion.div
+        className='w-full text-left'
         initial={{y:50}}
         whileInView={{y:0}}
         transition={{duration:0.5, type:"spring"}}
@@ -41,21 +42,21 @@ const Education = () => {
         <div ref={ref} className='w-[75%] mx-auto relative  lg:w-[90%] md:w-full'>
 
             <motion.div style={{scaleY: scrollYProgress}} 
-            className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]'/>
+            className='absolute left-9 top-6 w-[4px] h-[calc(100%-24px)] bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] md:top-5 md:h-[calc(100%-20px)] xs:left-[20px] xs:top-4 xs:h-[calc(100%-16px)]'/>
 
             <ul className='w-full flex flex-col items-start justify-between ml-4  xs:ml-2'>
                 <Details 
-                    type="B.Tech In Biotechnology"
-                    time="2021-2025"
-                    place="Haldia Institute of Technology"
-                    info="Relevant courses including core subjects like Biochemistry, Biomolecules, Molecular Biology, Microbiology, Genetics..."
+                    type="B.Tech in Biotechnology"
+                    time="December 2021 – July 2025"
+                    place="Haldia Institute of Technology, India"
+                    info="GPA: 8.19/10.0 | Relevant coursework: Biochemistry, Molecular Biology, Microbiology, Immunology"
                 />
 
                 <Details 
-                    type="All India Secondary School Certificate Exam (Class-12th)"
-                    time="2015-2019"
-                    place="Devasthaly Vidyapeeth"
-                    info="Physics, Chemistry, Maths, Computer Science, English"
+                    type="Senior School Certificate Examination"
+                    time="2019 – 2020"
+                    place="Devasthaly Vidyapeeth, Uttar Pradesh, India"
+                    info="Percentage: 71.4% | Relevant coursework: Physics, Chemistry, Mathematics, Computer Science"
                 />
             </ul>
         </div>

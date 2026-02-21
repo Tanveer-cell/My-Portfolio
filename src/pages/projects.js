@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg"
+import project1 from "../../public/images/projects/biotech-cover.jpg"
 import {motion} from "framer-motion"
 import TransitionEffect from '@/components/TransitionEffect'
 
@@ -81,81 +81,73 @@ const projects = () => {
           <Layout className='pt-16'>
             <AnimatedText text="Imagination Trumps Knowledge!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
             
-            <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
-              <div className='col-span-12'>
-                <FeaturedProject
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
-              <div className='col-span-6 sm:col-span-12'>
-                <Project
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
+            <ul className='w-full flex flex-col gap-6'>
+              <li className='relative w-full rounded-2xl border border-solid border-dark bg-light p-5 dark:border-light dark:bg-dark'>
+                <div className='flex items-start gap-6 sm:flex-col'>
+                  <Link
+                    href="https://tanveer-portfolio-prime.vercel.app/"
+                    target="_blank"
+                    className='block w-40 shrink-0 overflow-hidden rounded-xl border border-dark/10 dark:border-light/20'
+                  >
+                    <FramerImage
+                      src={project1}
+                      alt="Portfolio Website"
+                      className="h-24 w-full object-cover sm:h-40"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </Link>
+                  <div className='flex-1'>
+                    <div className='text-sm font-semibold uppercase tracking-wide text-primary dark:text-primaryDark'>
+                      Featured Project
+                    </div>
+                    <Link href="https://tanveer-portfolio-prime.vercel.app/" target="_blank" className='block'>
+                      <h2 className='text-2xl font-bold hover:underline underline-offset-2'>
+                        Portfolio Website
+                      </h2>
+                    </Link>
+                    <p className='mt-2 text-sm text-dark/80 dark:text-light/80'>
+                      Responsive portfolio built with Next.js, Tailwind CSS, and Framer Motion. Optimized for performance and SEO, deployed on Vercel.
+                    </p>
+                    <div className='mt-4 flex items-center gap-4'>
+                      <Link href="https://github.com/Tanveer-cell/My-Portfolio" target="_blank" className='w-8'>
+                        <GithubIcon/>
+                      </Link>
+                      <Link href="https://tanveer-portfolio-prime.vercel.app/" target="_blank" className='text-sm font-semibold underline'>
+                        Visit
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
 
-              <div className='col-span-6 sm:col-span-12'>
-                <Project
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
-
-              <div className='col-span-12'>
-                <FeaturedProject
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
-              <div className='col-span-6 sm:col-span-12'>
-                <Project
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
-              <div className='col-span-6 sm:col-span-12'>
-                <Project
-                  title="Crypto Screener Application"
-                  img={project1}
-                  summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                  It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                  local currency."
-                  link="/"
-                  github="/"
-                  type="Featured Project"
-                />
-              </div>
+            <div className='mt-24 w-full'>
+              <h2 className='mb-8 text-3xl font-bold text-dark dark:text-light'>In Progress</h2>
+              <ul className='w-full flex flex-col gap-6'>
+                <li className='relative w-full rounded-2xl border border-dashed border-dark/40 bg-light p-5 dark:bg-dark dark:border-light/40'>
+                  <div className='flex items-start gap-6 sm:flex-col'>
+                    <div className='block w-40 shrink-0 overflow-hidden rounded-xl border border-dark/10 dark:border-light/20'>
+                      <FramerImage
+                        src={project1}
+                        alt="Computer Quiz App"
+                        className="h-24 w-full object-cover sm:h-40"
+                        whileHover={{ scale: 1.03 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    </div>
+                    <div className='flex-1'>
+                      <div className='text-sm font-semibold uppercase tracking-wide text-primary dark:text-primaryDark'>
+                        In Progress
+                      </div>
+                      <h3 className='text-2xl font-bold text-dark dark:text-light'>Computer Quiz App</h3>
+                      <p className='mt-2 text-sm text-dark/80 dark:text-light/80'>
+                        Desktop quiz app built with Java and NetBeans, using Oracle DBMS for data storage. Not yet published on GitHub.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
 
           </Layout>

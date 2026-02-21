@@ -4,13 +4,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
-import article1 from "../../public/images/articles/pagination component in reactjs.jpg"
-import article2 from "../../public/images/articles/create loading screen in react js.jpg"
 import {motion, useMotionValue} from "framer-motion"
-import article3 from "../../public/images/articles/create modal component in react using react portals.png"
-import article4 from "../../public/images/articles/form validation in reactjs using custom react hook.png"
-import article5 from "../../public/images/articles/smooth scrolling in reactjs.png"
 import TransitionEffect from '@/components/TransitionEffect'
+import { featuredArticles, allArticles } from '@/data/articles'
 
 const FramerImage = motion(Image);
 
@@ -20,23 +16,25 @@ const MovingImg =({title, img, link}) => {
   const imgRef = useRef(null);
 
   function handleMouse(event){
+    if(!imgRef.current) return;
     imgRef.current.style.display="inline-block";
     x.set(event.pageX);
     y.set(-10);
   }
 
   function handleMouseLeave(event){
+    if(!imgRef.current) return;
     imgRef.current.style.display="none";
     x.set(0);
     y.set(0);
   }
 
   return(
-    <Link href={link} target="_blank"
-    onMouseMove={handleMouse}
-    onMouseLeave={handleMouseLeave}
+    <Link href={link}
+      onMouseMove={handleMouse}
+      onMouseLeave={handleMouseLeave}
     >
-    <h2 className='capitalize tetxt-xl font-semibold hover:underline'>{title}</h2>
+    <h2 className='capitalize text-xl font-semibold hover:underline'>{title}</h2>
     <FramerImage 
     style={{x:x, y:y}}
     initial={{opacity:0}}
@@ -63,7 +61,7 @@ const FeaturedArticle = ({img, title, time, summary, link}) => {
   return(
     <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
       <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl' />
-      <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
+      <Link href={link} className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
         <FramerImage src={img} alt={title} className="w-full h-auto"
         whileHover={{scale:1.05}}
         transition={{duration:0.2}}
@@ -71,7 +69,7 @@ const FeaturedArticle = ({img, title, time, summary, link}) => {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         />
       </Link>
-      <Link href={title} target="_blank">
+      <Link href={link}>
         <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline xs:text-lg'>{title}</h2>
       </Link>
       <p className='text-sm mb-2'>{summary}</p>
@@ -91,48 +89,41 @@ const articles = () => {
         <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
             <Layout className='pt-16'>
                 <AnimatedText text="Words Can Change The World!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
-                <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
-                  <FeaturedArticle
-                    title="The Millennium Problems"
-                    summary="The seven problems which made mathematicians stumbble upon to think for hundreds of years."
-                    time="9 min read"
-                    link="/"
-                    img={article1}                    
-                  />
-                  <FeaturedArticle
-                    title="World of IoT"
-                    summary="Deep dive into the world of IoT and know how the world communicates to make our life a lot easier."
-                    time="9 min read"
-                    link="/differentialGeometry"
-                    img={article2}                    
-                  />
-                </ul>
-                <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
-                <ul>
-                  <Article 
-                  title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                  date="March 22, 2023"
-                  link="/"
-                  img={article3}
-                  />
-                  <Article 
-                  title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                  date="March 22, 2023"
-                  link="/"
-                  img={article4}
-                  />
-                  <Article 
-                  title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                  date="March 22, 2023"
-                  link="/"
-                  img={article5}
-                  />
-                  <Article 
-                  title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
-                  date="March 22, 2023"
-                  link="/"
-                  img={article3}
-                  />
+                <ul className='w-full flex flex-col gap-6'>
+                  {featuredArticles.map((article) => (
+                    <li
+                      key={article.slug}
+                      className='relative w-full rounded-2xl border border-solid border-dark bg-light p-5 dark:border-light dark:bg-dark'
+                    >
+                      <div className='flex items-start gap-6 sm:flex-col'>
+                        <Link
+                          href={`/articles/${article.slug}`}
+                          className='block w-40 shrink-0 overflow-hidden rounded-xl border border-dark/10 dark:border-light/20'
+                        >
+                          <FramerImage
+                            src={article.img}
+                            alt={article.title}
+                            className="h-24 w-full object-cover sm:h-40"
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.2 }}
+                          />
+                        </Link>
+                        <div className='flex-1'>
+                          <Link href={`/articles/${article.slug}`} className='block'>
+                            <h2 className='text-2xl font-bold hover:underline underline-offset-2'>
+                              {article.title}
+                            </h2>
+                          </Link>
+                          <p className='mt-2 text-sm text-dark/80 dark:text-light/80'>
+                            {article.summary}
+                          </p>
+                          <div className='mt-4 text-sm font-semibold text-primary dark:text-primaryDark'>
+                            {article.time}
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
             </Layout>
         </main>
