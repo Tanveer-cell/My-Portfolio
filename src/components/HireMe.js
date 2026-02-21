@@ -1,14 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const HireMe = () => {
   return (
     <div className='fixed left-4 bottom-4 flex items-center justify-center overflow-hidden md:right-8 md:left-auto md:top-0 md:bottom-auto md:absolute sm:right-0'>
         <div className='w-44 h-44 flex items-center justify-center relative md:w-28 md:h-28'>
-            <img
+            <Image
               src="/images/svgs/biotech-orbit.svg"
               alt=""
-              className="absolute inset-0 w-full h-full animate-spin-slow opacity-80"
+              fill
+              className="absolute inset-0 w-full h-full animate-spin-slow opacity-80 object-contain"
+              sizes="(max-width: 768px) 112px, 176px"
+              priority
             />
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=tnv.641@gmail.com"
