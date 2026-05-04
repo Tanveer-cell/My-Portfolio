@@ -7,6 +7,14 @@ export const handwrittenNotes = [
     description: 'Lecture notes covering cell signalling and core immunology concepts.',
     url: 'https://pub-6723464932c04c0188272a9415f94b49.r2.dev/cell-signalling-and-immunology.pdf',
   },
+  {
+    slug: 'methods-in-biology',
+    title: 'Methods in Biology',
+    subject: 'Methods in Biology',
+    type: 'Handwritten PDF',
+    description: 'Lecture notes covering experimental methods and core biology techniques.',
+    url: 'https://pub-6723464932c04c0188272a9415f94b49.r2.dev/methods-in-biology.pdf',
+  },
 ];
 
 export const typedSections = [
