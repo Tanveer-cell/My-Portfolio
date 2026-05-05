@@ -57,7 +57,8 @@ const NotesPage = () => {
 
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-1">
               {handwrittenNotes.map((note) => {
-                const viewerUrl = `${note.url}#toolbar=0&navpanes=0&scrollbar=1`;
+                const versionQuery = note.version ? `?v=${note.version}` : '';
+                const viewerUrl = `${note.url}${versionQuery}#toolbar=0&navpanes=0&scrollbar=1`;
 
                 return (
                   <article
@@ -80,6 +81,7 @@ const NotesPage = () => {
 
                       <div className="mt-6 overflow-hidden rounded-2xl border border-dark/15 bg-white shadow-inner dark:border-light/15">
                         <iframe
+                          key={`${note.slug}-${note.version || 'current'}`}
                           title={`${note.title} preview`}
                           src={viewerUrl}
                           className="h-[420px] w-full"

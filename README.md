@@ -153,6 +153,7 @@ export const handwrittenNotes = [
     type: 'Handwritten PDF',
     description: 'Lecture notes covering cell signalling and core immunology concepts.',
     url: 'https://pub-xxxx.r2.dev/cell-signalling-and-immunology.pdf',
+    version: '20260505',
   },
 ];
 ```
@@ -165,6 +166,32 @@ export const handwrittenNotes = [
 - `type`: currently stored in data, not shown in the UI
 - `description`: short supporting text
 - `url`: public R2 file URL
+- `version`: cache-busting string used for embedded PDF preview refresh
+
+### If You Replace An Existing PDF In R2
+
+If you upload a corrected PDF with the same filename, the `Open Viewer` link may show the new file immediately while the embedded card preview still shows the old cached copy.
+
+In that case:
+
+1. keep the same R2 filename
+2. update the `version` field for that note in `src/data/notes.js`
+3. refresh the page
+
+Example:
+
+```js
+{
+  slug: 'methods-in-biology',
+  title: 'Methods in Biology',
+  subject: 'Methods in Biology',
+  description: 'Lecture notes covering experimental methods and core biology techniques.',
+  url: 'https://pub-xxxx.r2.dev/methods-in-biology.pdf',
+  version: '20260506',
+}
+```
+
+You do not need to rename the PDF just to refresh the embedded preview.
 
 ## How To Add More Typed Notes
 
